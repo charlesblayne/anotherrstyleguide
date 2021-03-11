@@ -1,0 +1,108 @@
+---
+title: "Another R Style Guide"
+author: "Charles B. Walters"
+output: html_notebook
+---
+
+***
+"Good coding style is like using correct punctuation. You can manage without it, 
+but it sure makes things easier to read."
+- Hadley Wickham
+
+As I sharpen my skills in R, this will serve as a living document, a reflection
+of the R style parameters I will endeavor to adhere to for clarity, consistency,
+and fluidity. It has been loosely modeled from Hadley Wickham's *Advanced R*
+
+*Last update: 3/11/2021*
+
+***
+
+## General
+### File Names
+File names should be clear, purposeful, concise, and end in .R.
+
+Yay
+```{r}
+fit-models.R
+utility-functions.R
+```
+Nay
+```{r}
+allofthethingsforprojectxyz.r
+JulyFinalStats.r
+```
+
+### Object Names
+Variable and function names are all lowercase, and words are to be separated 
+with an underscore (_). Objects containing primary data structures may use capital letters 
+to remain distinct from other objects. Like file names, object names should be 
+clear, purposeful, and concise.
+
+Yay
+```{r}
+day_one_observations
+day_1_results
+```
+Nay
+```{r}
+DayOneObs
+test1
+```
+
+### Commenting
+Commenting in R scripts is useful for explaining syntax where needed. Comments should be used
+for "why" rather than "what." Clarity, brevity, and purpose are paramount. 
+
+Yay
+```{r}
+# Setting factors for use with conditional proportions
+```
+Nay
+```{r}
+# This is me renaming variable levels
+```
+
+***
+
+## Syntax
+### Spacing
+Operators have single spaces on each side with the exception of "/" and ":". Commas have single spaces after, never before.
+
+Yay
+```{r}
+day_one_mean <- c((2 + 3 + 4 + 6)/4)
+```
+Nay
+```{r}
+day_one_mean<-c((2+3+4+6)/4)
+```
+
+### Indentation
+Code is indented with two spaces. If a function runs more than one line, 
+however, indent subsequent lines to the start of the function's arguments.
+
+Yay
+```{r}
+long_function_name <- barplot(a = "a long argument", 
+                              b = "another argument",
+                              c = "another long argument")
+```
+Nay
+```{r}
+long_function_name <- barplot(a = "a long argument", b = "another argument", 
+c = "another long argument")
+```
+
+### Assignment
+<- and -> are the appropriate assignment operators.
+
+Yay
+```{r}
+x <- c(1:10)
+```
+Nay
+```{r}
+x = c(1:10)
+```
+
+***
